@@ -65,7 +65,7 @@ class ReportCardGenerator {
   /*
   Write a method which calls the getScoreCardByGender method and gives the result which has more than 50%.
    */
-  def getStudentHasAbove50: IterableOnce[(String, ScoreCard)] =
+  def getStudentHasAbove50: List[(String, ScoreCard)] =
     (getScoreCardByGender match {
       case ((_, maleScorecard), (_, femaleScorecard)) =>
         maleScorecard.filter(_.percentage > 50) ++ femaleScorecard.filter(_.percentage > 50)
